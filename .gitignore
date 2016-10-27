@@ -1,7 +1,8 @@
 .DS_Store
 lib/
+org_images/
 watermark/
 camera/
 print/
 source/
-
+vcomp100.dll

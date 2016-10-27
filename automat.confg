@@ -1,8 +1,18 @@
-print_width="1800"
-print_height="1200"
+## SETTINGS for GIF
+# image type
+type="gif"
+# number of frames
+frames=4
+# Frame delay ex. 100 = 1 second
+frame_delay=30
+
+
+## General settings
+print_width=1800
+print_height=1200
 print_overlay="./watermark/watermark.png"
-source_width="1200"
-source_height="800"
+source_width=1200
+source_height=800
 source_overlay="./watermark/watermark-small.png"
 print_folder="./print/"
 source_folder="./source/"
