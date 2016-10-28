@@ -2,13 +2,14 @@
 
 while true;
 do 
-	clear
-	source ./automat.confg
-	for i in ./camera/*.jpg
+	#clear
+	source ./confg.ini
+	if [ ! -d $camera_folder ]; then mkdir $camera_folder; fi
+	for i in $camera_folder*.jpg
 	do
 		if [ ! -d $print_folder ]; then mkdir $print_folder; fi
 		if [ ! -d $source_folder ]; then mkdir $source_folder; fi
-			if [ ! -d "./semiprocessed" ]; then mkdir "./semiprocessed"; fi
+		if [ ! -d "./semiprocessed" ]; then mkdir "./semiprocessed"; fi
 		filename=$(basename "$i")
 		if [ -f "$i" ];
 		then
@@ -39,7 +40,7 @@ do
 			"./semiprocessed/$filename";
 			
 			if [ ! -d "./org_images" ]; then mkdir "./org_images"; fi
-			mv $i "./org_images/$filename";
+			mv -f "$camera_folder$filename" "./org_images/$filename";
 
 			if [ "$type" = "gif" ]; then
 				numfiles=(./semiprocessed/*jpg)
@@ -54,7 +55,7 @@ do
 					rm -rf ./semiprocessed/*
 				fi
 			else
-				mv "./semiprocessed/$filename" "$source_folder$filename";
+				mv -f "./semiprocessed/$filename" "$source_folder$filename";
 			fi
 
 			echo $filename;
