@@ -48,7 +48,7 @@ do
 				
 				if [ $numfiles = $frames ]; then
 					gif_filename=$(basename "$i" .jpg)
-					echo "createing gif $gif_filename";
+					echo "creating gif $gif_filename";
 					
 					./lib/convert -delay $frame_delay -loop 0 "./semiprocessed/*jpg" "$source_folder$gif_filename.gif";
 					
