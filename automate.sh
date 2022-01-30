@@ -1,4 +1,4 @@
-#This script is used to auto resize and add watermark on images and save them to diffrent folders
+#This script is used to auto resize and add watermark on images and save them to different folders
 
 while true;
 do 
